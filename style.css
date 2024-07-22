@@ -40,8 +40,8 @@ body {
 .heart::after {
   content: '';
   position: absolute;
-  height: 70px;
-  width: 70px;
+  height: 100%;
+  width: 100%;
   background-color: var(--primary-color);
   border-radius: 50%;
   box-shadow: 0 0 90px var(--primary-color);
@@ -50,11 +50,13 @@ body {
 .heart::before {
   top: -50%;
   left: 0;
+  transform: translate(0, -50%);
 }
 
 .heart::after {
   right: -50%;
   top: 0;
+  transform: translate(50%, 0);
 }
 
 .mensaje {
@@ -72,10 +74,11 @@ body {
   border-radius: 10px;
 }
 
-@media screen and (max-width: 1024px) {
+/* Ajustamos el tamaño del corazón para pantallas móviles */
+@media screen and (max-width: 600px) {
   .heart {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
   }
   .mensaje {
     font-size: 18px;
@@ -83,7 +86,7 @@ body {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 400px) {
   .heart {
     height: 30px;
     width: 30px;
